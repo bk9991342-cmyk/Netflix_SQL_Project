@@ -13,3 +13,23 @@ This project analyzes Netflix’s movies and TV shows data using SQL to answer b
 ## Dataset
 The dataset used in this project is sourced from Kaggle and contains detailed information on Netflix movies and TV shows:
 - **Dataset Link:** [Movies Dataset](https://www.kaggle.com/datasets/shivamb/netflix-shows?resource=download)
+
+## Schema
+```sql
+CREATE TABLE netflix_titles (
+    show_id VARCHAR(10),
+    type VARCHAR(10),
+    title VARCHAR(200),
+    director VARCHAR(250),
+    cast TEXT,
+    country VARCHAR(150),
+    date_added DATE,
+    release_year INT,
+    rating VARCHAR(10),
+    duration VARCHAR(20),
+    listed_in VARCHAR(250),
+    description TEXT
+);
+```
+
+## Business Problems and Solutions
