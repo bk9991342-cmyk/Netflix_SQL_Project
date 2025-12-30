@@ -32,6 +32,104 @@ CREATE TABLE netflix_titles (
 );
 ```
 
+## Exploratory Data Analysis (EDA)
+**1. Total content on Netflix**
+```sql
+SELECT COUNT(*) AS total_titles
+FROM netflix_titles;
+```
+
+**2. Movies vs TV Shows**
+```sql
+SELECT type, COUNT(*) AS total
+FROM netflix_titles
+GROUP BY type;
+```
+
+**3. Top 10 countries with most content**
+```sql
+SELECT country, COUNT(*) AS total_content
+FROM netflix_titles
+WHERE country IS NOT NULL
+GROUP BY country
+ORDER BY total_content DESC
+LIMIT 10;
+```
+
+**4. Content added per year**
+```sql
+SELECT YEAR(date_added) AS year_added, COUNT(*) AS total
+FROM netflix_titles
+WHERE date_added IS NOT NULL
+GROUP BY year_added
+ORDER BY year_added;
+```
+
+**5. Most common genres**
+```sql
+SELECT listed_in, COUNT(*) AS total
+FROM netflix_titles
+GROUP BY listed_in
+ORDER BY total DESC
+LIMIT 10;
+```
+
+**6. Top ratings on Netflix**
+```sql
+SELECT rating, COUNT(*) AS total
+FROM netflix_titles
+GROUP BY rating
+ORDER BY total DESC;
+```
+
+**7. Movies released after 2015**
+```sql
+SELECT title, release_year
+FROM netflix_titles
+WHERE type = 'Movie'
+AND release_year > 2015;
+```
+
+**8. TV Shows with more than 3 seasons**
+```sql
+SELECT title, duration
+FROM netflix_titles
+WHERE type = 'TV Show'
+AND CAST(SUBSTRING_INDEX(duration, ' ', 1) AS UNSIGNED) > 3;
+```
+
+**9. Average release year by type**
+```sql
+SELECT type, AVG(release_year) AS avg_release_year
+FROM netflix_titles
+GROUP BY type;
+```
+
+**10. Indian content on Netflix**
+```sql
+SELECT COUNT(*) AS india_content
+FROM netflix_titles
+WHERE country LIKE '%India%';
+```
+
+**11. Most popular genre in India**
+```sql
+SELECT listed_in, COUNT(*) AS total
+FROM netflix_titles
+WHERE country LIKE '%India%'
+GROUP BY listed_in
+ORDER BY total DESC
+LIMIT 1;
+```
+
+**12. Content trend: Movies vs TV Shows over time**
+```sql
+SELECT release_year, type, COUNT(*) AS total
+FROM netflix_titles
+GROUP BY release_year, type
+ORDER BY release_year;
+```
+
 ## Business Problems and Solutions
 ### 1. Count the Number of Movies vs TV Shows
 
