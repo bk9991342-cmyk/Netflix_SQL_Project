@@ -1,5 +1,5 @@
 # Netflix_SQL_Project
-sql project
+![Netflix_logo](https://github.com/bk9991342-cmyk/Netflix_SQL_Project/blob/main/logo.png)
 
 ## Overview
 This project analyzes Netflix’s movies and TV shows data using SQL to answer business-driven questions and uncover content trends. It highlights data exploration techniques, analytical problem-solving, and insight generation through structured SQL queries.
