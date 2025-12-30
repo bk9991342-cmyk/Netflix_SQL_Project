@@ -325,3 +325,12 @@ FROM (
 ) AS categorized_content
 GROUP BY category;
 ```
+
+## Findings and Conclusion
+
+- **Content Distribution:** The analysis reveals a diverse mix of movies and TV shows on Netflix, spanning multiple genres, formats, and audience ratings.
+- **Audience Targeting:** Identifying the most common content ratings offers valuable insights into Netflix’s primary target audiences and content classification strategy.
+- **Geographical Trends:** Country-wise analysis highlights key content-producing regions, with a strong presence from markets such as the United States and India, reflecting Netflix’s global and regional focus.
+- **Content Categorization:** Keyword- and genre-based categorization provides a clearer understanding of content themes, enabling better classification and discovery of titles.
+
+this analysis delivers a comprehensive overview of Netflix’s content landscape and demonstrates how SQL-driven insights can support data-informed content planning, regional strategy, and business decision-making.
